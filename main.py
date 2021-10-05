@@ -95,7 +95,7 @@ for aux in tqdm(range(len_Q, npop, len_Q)):
     mape.append(mean_absolute_percentage_error(pd.DataFrame(y_test.values), pd.DataFrame(y_pred.values)))
 
     # Merge the predictions of the df train and df test
-    df_merged = merge_matrices(N_Q_index, df_pref, y_pred, nobj, npop)
+    df_merged = merge_matrices(N_Q_index, df_pref, y_pred)
 
     # Employ AHP in the predicted (mixed with preferences) dataset
     rank_predicted = ahp(df_merged).index
